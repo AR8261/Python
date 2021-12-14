@@ -1,0 +1,30 @@
+{% extends "./base.html" %}
+{% block body %}
+<h2>Apartment List</h2>
+<a href="{% url 'apartmentcreate' %}"><button class="btn">Add Apartment</button></a>
+<table id="apartments">
+    <tr>
+        <th>  Apt  </th>
+        <th>   Rent  </th>
+        <th> Building </th>
+        <th>   </th>
+        <th>  </th>
+    </tr>
+    <tr>
+    {% for apartment in apartment_list %}
+    </tr>
+    <tr>
+        <td>{{apartment.number}}</td>
+        <td>{{apartment.monthly_rent}}$</td>
+        <td>{{apartment.building}}</td>
+        <td><a href="{% url 'apartmentupdate' apartment.id %}"><button>Edit</button></a></td>
+        <td><a href="{% url 'apartmentdelete' apartment.id %}"><button>Delete</button></a></td>
+
+    </tr>
+    {% endfor %}
+
+</table>
+{% endblock %}
+
+
+

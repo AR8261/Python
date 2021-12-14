@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+
+  <a href="{% url 'home' %}"><h1>Home</h1></a>
+    <h3>Empire Building International</h3>
+  {% block body %}
+  {% endblock %}
+</body>
+</html>
